@@ -273,6 +273,8 @@ class JUnitFormatter implements Formatter
             TestResult::FAILED    => 'failed',
             TestResult::UNDEFINED => 'undefined',
         );
+        
+        $code = in_array($code, aray_keys($testResultString)) ? $code : TestResult::UNDEFINED;
 
         $this->testsuiteStats[$code]++;
 
